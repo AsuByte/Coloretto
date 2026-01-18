@@ -227,47 +227,34 @@ const Chat: React.FC = () => {
 
   const fetchUserProfilePicture = useCallback(
     async (username: string) => {
-      if (userProfilePictures[username]) return;
-
-      const defaultAvatar = `https://ui-avatars.com/api/?name=${username}&background=random&color=fff&size=40`;
+      if (!username || userProfilePictures[username]) return;
 
       try {
-        const response = await fetch(
-          `https://coloretto.onrender.com/users/profile/${username}`,
-        );
+        const envUrl =
+          import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const apiTarget = new URL(`/users/profile/${username}`, envUrl);
 
-        const responseText = await response.text();
+        const response = await fetch(apiTarget.toString(), {
+          method: "GET",
+          mode: "cors",
+        });
 
-        if (!responseText) {
-          setUserProfilePictures((prev) => ({
-            ...prev,
-            [username]: defaultAvatar,
-          }));
-          return;
-        }
+        if (!response.ok) throw new Error("Not found");
 
-        const userData = JSON.parse(responseText);
+        const userData = await response.json();
 
-        if (userData.profilePicture) {
+        if (userData && userData.profilePicture) {
           setUserProfilePictures((prev) => ({
             ...prev,
             [username]: userData.profilePicture,
           }));
-        } else {
-          setUserProfilePictures((prev) => ({
-            ...prev,
-            [username]: defaultAvatar,
-          }));
         }
-      } catch (error) {
-        console.error(`Error fetching profile for ${username}:`, error);
+      } catch {
+        const fallback = `https://ui-avatars.com/api/?name=${username}&background=random&color=fff&length=1`;
         setUserProfilePictures((prev) => ({
           ...prev,
-          [username]: defaultAvatar,
+          [username]: fallback,
         }));
       }
     },

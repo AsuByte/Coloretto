@@ -18,6 +18,9 @@ export class Game {
   @Prop({ default: true })
   isAvailable: boolean;
 
+  @Prop({ default: true })
+  isAiEnabled: boolean;
+
   @Prop({ type: [String], default: [] })
   players: string[];
 
