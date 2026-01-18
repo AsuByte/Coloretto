@@ -233,7 +233,7 @@ const Chat: React.FC = () => {
         const envUrl =
           import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
-        const apiTarget = new URL(`/users/profile/${username}`, envUrl);
+        const apiTarget = new URL(`users/profile/${username}`, envUrl);
 
         const response = await fetch(apiTarget.toString(), {
           method: "GET",
