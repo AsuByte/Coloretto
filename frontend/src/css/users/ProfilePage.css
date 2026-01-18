@@ -1,0 +1,238 @@
+.profile-container {
+  width: 90%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, #282828, #101010);
+  background-position: center;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.profile-info {
+  width: 100%;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #28a745;
+  cursor: pointer;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.connection-status p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.status-icon {
+  font-size: 24px;
+  color: #28a745;
+  margin-right: 8px;
+}
+
+.user-data {
+  display: inline-block;
+  text-align: center;
+  margin-top: 5px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(30, 30, 30, 0.9);
+  border: 1px solid #333;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  width: 100%;
+  max-width: 500px;
+}
+
+.update-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #ff9900e6;
+}
+
+.update-icon:hover {
+  color: #298296;
+}
+
+.user-data p {
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 10px;
+  border-bottom: 1px solid #686868;
+  color: #dcdcdc;
+}
+
+.user-data p:last-child {
+  border-bottom: none;
+}
+
+.user-stats {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(40, 40, 40, 0.9);
+  border: 1px solid #444;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #ddd;
+  width: 100%;
+  max-width: 500px;
+}
+
+.games {
+  margin: 10px 0;
+  color: #dcdcdc;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.user-stats .icon-game {
+  font-size: 27px;
+  color: #ff9900e6;
+  margin-bottom: 10px;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.user-actions .button-password {
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: #ff9900e6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.user-actions .button-delete {
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.user-actions .button-password:hover {
+  background-color: #e68900;
+}
+
+.user-actions .button-delete:hover {
+  background-color: #c82333;
+}
+
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: #28a745;
+  color: white;
+}
+
+@media (min-width: 481px) {
+  .profile-container {
+    width: 90%;
+    margin: 8% auto;
+    padding: 20px;
+  }
+  
+  .photo {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .user-data p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-data p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile-container {
+    width: 80%;
+    max-width: 620px;
+    margin: 6% auto;
+    padding: 25px;
+  }
+  
+  .photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .user-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .user-actions .button-password,
+  .user-actions .button-delete {
+    width: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .profile-container {
+    margin: 5% auto;
+    padding: 30px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+}

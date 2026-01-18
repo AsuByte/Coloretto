@@ -1,0 +1,45 @@
+import { OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect } from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
+import { Game, GameDocument } from '@/games/game.schema';
+import { Card } from '@/games/card/card.schema';
+import { AiPhaseTurnService } from '@/games/ai/ai-phase-turn.service';
+export declare class GameGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+    private aiPhaseTurnService?;
+    constructor(aiPhaseTurnService?: AiPhaseTurnService);
+    server: Server;
+    afterInit(): void;
+    handleConnection(): void;
+    handleDisconnect(): void;
+    emitGameCreated(game: Game): void;
+    emitPlayerJoined(game: GameDocument, username: string, replacedAI?: string): void;
+    emitOwnerChanged(game: GameDocument, data: {
+        oldOwner: string;
+        newOwner: string;
+        wasOwner: boolean;
+    }): void;
+    emitOwnerReplacedByAI(game: GameDocument, originalOwner: string, newAI: string): void;
+    emitAIRepalaced(game: GameDocument, originalAI: string, newPlayer: string): void;
+    emitPlayerLeft(game: GameDocument, username: string): void;
+    emitGameDeleted(gameName: string): void;
+    emitGamePrepared(game: GameDocument): void;
+    emitGameListUpdated(): void;
+    emitGameStateChanged(game: GameDocument): void;
+    emitPreparationStarted(game: GameDocument): void;
+    emitCardsAssigned(game: GameDocument): void;
+    emitNextTurn(game: GameDocument): void;
+    emitReassignmentStarting(game: GameDocument): void;
+    emitReassignmentComplete(game: GameDocument): void;
+    emitCardRevealed(game: GameDocument, revealedCard: Card): void;
+    emitAICardRevealed(game: GameDocument, playerId: string, card: Card, columnIndex: number): void;
+    emitRoundEndCardRevealed(game: Game, playerId: string, card: Card): void;
+    emitAIRoundEndCard(game: GameDocument, playerId: string, card: Card): void;
+    emitColumnTaken(game: GameDocument, columnIndex: number, playerName: string): void;
+    emitGameFinalized(game: GameDocument, finalScores: Record<string, number>, winners: string[]): void;
+    emitGameUnavailable(game: GameDocument): void;
+    sanitizeGameForEmission(game: Game | GameDocument): any;
+    private convertMapToObject;
+    joinGameRoom(client: Socket, gameName: string): void;
+    leaveGameRoom(client: Socket, gameName: string): void;
+    emitToRoom(room: string, event: string, data: any): void;
+    emitToGame(gameName: string, event: string, data: any): void;
+}

@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+}
+
+.register-container {
+  width: 420px;
+  margin: 10% auto;
+  padding: 20px 30px 20px;
+  border-radius: 15px;
+  background: linear-gradient(to top, #363636, #181818);
+  background-position: center;
+  backdrop-filter: blur(10px);
+  font-family: "Baloo", cursive;
+}
+
+.input-label {
+  display: none;
+}
+
+.register-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#register-title {
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  margin: 10px 0 0 0;
+  width: 100%;
+  display: block;
+}
+
+#fullname,
+#username {
+  padding-left: 9px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 40px;
+  padding: 0 45px 0 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: #282828;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.input-wrapper input::placeholder {
+  color: #a5a5a5;
+}
+
+.input-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 14px;
+  color: #a5a5a5;
+}
+
+.input-wrapper input:focus + .input-icon {
+  color: #ff9900e6;
+}
+
+.input-error {
+  border-color: #ff4444;
+}
+
+.field-error {
+  color: #ff4444;
+  font-size: 15px;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+}
+
+.error-message {
+  color: #ff4444;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #28a745;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #218838;
+}
+
+.submit-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.submit-button.loading {
+  background: #20c997;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.register-footer {
+  background: transparent;
+  border: none;
+  margin-top: 15px;
+}
+
+.login-link {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.link {
+  color: #ff9900e6;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #28a745;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 360px) {
+  .register-container {
+    width: 95%;
+    margin: 5% auto;
+    padding: 20px 15px;
+  }
+
+  #register-title {
+    font-size: 22px;
+    margin: 20px 0 0 0;
+  }
+
+  .input-wrapper input {
+    height: 42px;
+    font-size: 14px;
+    padding: 0 45px 0 15px;
+  }
+
+  .input-icon {
+    right: 12px;
+    font-size: 13px;
+  }
+
+  .submit-button {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .login-link {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .register-container {
+    width: 450px;
+    margin: 8% auto;
+    padding: 35px 40px;
+  }
+
+  #register-title {
+    font-size: 28px;
+    margin: 25px 0 0 0;
+  }
+
+  .input-wrapper input {
+    height: 45px;
+    font-size: 16px;
+    padding: 0 45px 0 15px;
+  }
+
+  .submit-button {
+    height: 45px;
+    font-size: 17px;
+  }
+
+  .login-link {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .register-container {
+    width: 440px;
+    margin: 5% auto;
+    padding: 35px 35px;
+  }
+
+  #register-title {
+    font-size: 28px;
+  }
+
+  .input-wrapper input {
+    height: 42px;
+    font-size: 15px;
+    padding: 0 45px 0 15px;
+  }
+
+  .submit-button {
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 600px) {
+  .register-container {
+    margin: 2% auto;
+    padding: 20px 25px;
+    min-height: auto;
+  }
+
+  #register-title {
+    margin: 15px 0 0 0;
+    font-size: 24px;
+  }
+
+  .input-wrapper {
+    margin-bottom: 2px;
+  }
+
+  .register-footer {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .register-container {
+    margin: 2% auto;
+    padding: 20px 25px;
+    width: 85%;
+  }
+
+  #register-title {
+    margin: 15px 0 0 0;
+    font-size: 24px;
+  }
+
+  .input-wrapper {
+    margin-bottom: 2px;
+    height: 45px;
+  }
+
+  .input-wrapper input {
+    height: 38px;
+    padding: 0 45px 0 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .register-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 15px 25px;
+  }
+
+  #register-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .input-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .input-wrapper input {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    height: 46px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .register-container {
+    width: 450px;
+    margin: 50px auto;
+    padding: 30px 35px 40px;
+  }
+
+  #register-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .input-wrapper input {
+    height: 52px;
+    font-size: 16px;
+  }
+
+  .submit-button {
+    height: 52px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .register-container {
+    width: 440px;
+    margin: 60px auto;
+    padding: 35px 40px 45px;
+  }
+
+  #register-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .register-container {
+    margin: 15px auto;
+    padding: 20px 25px;
+    width: 85%;
+  }
+
+  .input-wrapper {
+    margin-bottom: 18px;
+  }
+
+  .input-wrapper input {
+    height: 46px;
+  }
+}
+
+@media (max-height: 600px) {
+  .register-container {
+    margin: 15px auto;
+    padding: 20px 25px;
+  }
+
+  #register-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}

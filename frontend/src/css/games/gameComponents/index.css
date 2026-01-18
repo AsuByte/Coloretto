@@ -1,0 +1,12 @@
+@import "@/css/games/GamePage.css";
+@import "@/css/games/gameComponents/header.css";
+@import "@/css/games/gameComponents/sidebar.css";
+@import "@/css/games/gameComponents/columns.css";
+@import "@/css/games/gameComponents/players.css";
+@import "@/css/games/gameComponents/chat.css";
+@import "@/css/games/gameComponents/actions.css";
+@import "@/css/games/gameComponents/scores.css";
+@import "@/css/games/gameComponents/animations.css";
+@import "@/css/games/gameComponents/responsive/mobile.css";
+@import "@/css/games/gameComponents/responsive/tablet.css";
+@import "@/css/games/gameComponents/responsive/desktop.css";

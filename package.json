@@ -1,0 +1,20 @@
+{
+  "name": "coloretto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter backend start:dev\" \"pnpm --filter frontend dev\"",
+    "build": "pnpm --filter backend build && pnpm --filter frontend build",
+    "test": "pnpm --filter backend test && pnpm --filter frontend test",
+    "install:all": "pnpm install && cd backend && pnpm install && cd ../frontend && pnpm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

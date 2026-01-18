@@ -1,0 +1,240 @@
+.game-sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: row;
+  height: 180px;
+  background: var(--color-card);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  gap: var(--spacing-lg);
+  min-height: 180px;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.deck-section,
+.summary-section,
+.end-round-section,
+.game-info-section {
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.deck-section {
+  text-align: center;
+  padding: 10px;
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deck-stack {
+  position: relative;
+  height: 100px;
+  width: 120px;
+  margin: 0 auto 10px;
+  perspective: 1000px;
+}
+
+.deck-card {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.deck-count {
+  font-weight: bold;
+  color: #4e362e;
+  font-size: 0.95rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border);
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.summary-section {
+  text-align: center;
+  padding: 10px;
+  order: 3;
+  border-radius: 8px;
+  border: 2px dashed #000;
+  flex-shrink: 0;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.summary-section.summary_brown {
+  background: var(--color-summary-brown);
+  border: 2px solid var(--color-secondary);
+}
+
+.summary-section.summary_violet {
+  background: var(--color-summary-violet);
+  border: 2px solid var(--color-info);
+}
+
+.summary-section.summary_brown h4 {
+  color: #5d4037;
+}
+
+.summary-section.summary_violet h4 {
+  color: var(--color-info);
+}
+
+.summary-section h4 {
+  margin: 0 0 8px 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+}
+
+.summary-cards img {
+  width: 88px;
+  height: 120px;
+}
+
+.end-round-section {
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px dashed #672900;
+  background: rgba(211, 84, 0, 0.05);
+  order: 3;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 8px;
+}
+
+.end-round-placeholder {
+  min-height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.end-round-placeholder::after {
+  content: "Not revealed yet.";
+  color: rgba(77, 65, 61, 0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.end-round-section h4 {
+  margin: 0 0 6px 0;
+  color: #4d413d;
+  font-size: 0.75rem;
+}
+
+.end-round-section:not(.visible) {
+  opacity: 0.7;
+}
+
+.end-round-section.visible {
+  border: 2px solid var(--color-warning);
+  background: rgba(211, 84, 0, 0.15);
+  opacity: 1;
+  min-height: 140px;
+  justify-content: flex-start;
+}
+
+.end-round-section.visible h4 {
+  color: var(--color-warning);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.end-round-card {
+  width: 70px;
+  height: 98px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.game-info-section {
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--color-secondary);
+  background: rgba(139, 69, 19, 0.15);
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.game-info-section h4 {
+  margin: 0 0 8px 0;
+  color: #4a342c;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  justify-items: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #4a342c;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-size: 0.85rem;
+  color: var(--color-text-dark);
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3px 8px;
+  border-radius: 6px;
+  min-width: 40px;
+}

@@ -1,0 +1,153 @@
+.footer {
+  background: linear-gradient(135deg, #59876a 0%, #033a18 60%);
+  color: white;
+  padding: 1rem 1rem 1.5rem;
+  border-top: 3px solid #ffd93d;
+  position: relative;
+  min-height: 320px;
+}
+
+.chameleon2-gif {
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+  width: 120px;
+  height: 105px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 217, 61, 0.4);
+  padding-bottom: 1rem;
+}
+
+.footer-title {
+  color: #ffd93d;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+  color: #c8e6c9;
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+
+.footer-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 217, 61, 0.1);
+}
+
+.detail-label {
+  color: #ffd93d;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.footer-academic {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.project-info {
+  color: #bbdefb;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.year-info {
+  color: #ffcc80;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.copyright {
+  color: #c3d3db;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.implementation {
+  color: #94e498;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    min-height: auto;
+    padding-bottom: 100px;
+    position: relative;
+  }
+
+  .footer-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-title {
+    font-size: 1.7rem;
+  }
+
+  .chameleon2-gif {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 20px;
+    left: auto;
+    top: auto;
+    z-index: 2;
+  }
+}

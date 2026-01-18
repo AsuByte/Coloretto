@@ -1,0 +1,268 @@
+.create-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  margin: 5% auto;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, #363636, #181818);
+  border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.create-game-container .inputs label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.create-game-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff99009b, #4caf50);
+}
+
+.create-game-container h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.inputs {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.inputs input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #282828;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.inputs input[type="text"]:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.inputs input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.inputsPlayers {
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+.inputsPlayers label {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-weight: 500;
+  gap: 8px;
+  width: 100%;
+}
+
+.inputsPlayers {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 8px;
+  height: 46px;
+  pointer-events: none;
+}
+
+.counter-controls > *:not(.counter-btn) {
+  pointer-events: none;
+}
+
+.counter-controls .minus-btn,
+.plus-btn {
+  border: 1px solid #332;
+}
+
+.player-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.counter-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+}
+
+.counter-btn {
+  width: 46px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ddd;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+.counter-btn:disabled {
+  background: rgba(255, 255, 255, 0.03);
+  color: #666;
+  cursor: not-allowed;
+}
+
+.counter-btn:not(:disabled):hover {
+  background: rgba(255, 153, 0, 0.4);
+}
+
+.counter-btn:not(:disabled):active {
+  background: rgba(255, 153, 0);
+}
+
+.inputs label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+input[type="checkbox"] {
+  accent-color: #ff99009b;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.inputsLevel {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.inputsLevel #titleLevel {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.inputsLevel select {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: inherit;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.inputsLevel select:focus {
+  outline: none;
+  border-color: #ff99009b;
+}
+
+.inputsLevel option {
+  background-color: #282828;
+  color: #fff;
+  padding: 10px;
+}
+
+.createGame {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ff99009b;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.createGame:hover {
+  background-color: #4caf50;
+}
+
+.error {
+  color: #ff4444;
+  padding: 12px 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.gameCreate {
+  color: #4caf50;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .create-game-container {
+    margin: 20px auto;
+    padding: 30px 20px;
+    width: 90%;
+  }
+}
+
+.counter-controls {
+  height: 54px;
+}
+
+.counter-btn {
+  width: 54px;
+  font-size: 24px;
+  min-height: 54px;
+}
+
+.inputs input[type="text"],
+.inputsLevel select,
+.createGame {
+  min-height: 50px;
+  font-size: 1.1rem;
+}

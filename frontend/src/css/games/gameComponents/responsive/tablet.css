@@ -1,0 +1,340 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .game-page {
+    padding: 15px;
+  }
+
+  .game-container {
+    max-width: 1200px;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .game-main-area {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header header header"
+      "sidebar sidebar players players"
+      "columns columns columns columns"
+      "actions actions actions actions"
+      "chat chat chat chat";
+    gap: 12px;
+    height: calc(100vh - 180px);
+    min-height: 0;
+  }
+
+  .game-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .game-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 60%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .game-title h2 {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    display: block;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .turn-info {
+    width: auto;
+    text-align: right;
+    font-size: 1rem;
+    margin-left: auto;
+  }
+
+  .game-sidebar {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 12px;
+    height: auto;
+    width: auto;
+  }
+
+  .deck-section,
+  .summary-section,
+  .end-round-section,
+  .game-info-section {
+    flex: 0 0 auto;
+    width: 160px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .deck-stack {
+    height: 120px;
+    width: 140px;
+  }
+
+  .deck-card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .summary-cards img {
+    width: 90px;
+    height: 126px;
+  }
+
+  .end-round-card {
+    width: 90px;
+    height: 126px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: 55px;
+  }
+
+  .info-item {
+    margin-bottom: 45px;
+  }
+
+  .game-center {
+    grid-area: columns;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    min-height: 0;
+  }
+
+  .columns-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+    width: fit-content;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    box-sizing: border-box;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+  .columns-container[data-columns="2"] {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: 380px;
+    width: 430px;
+    height: 380px;
+  }
+
+  .columns-container[data-columns="3"] {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: 380px;
+    width: 636px;
+    height: 380px;
+  }
+
+  .columns-container[data-columns="4"] {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 380px);
+    gap: 25px 15px;
+    width: 430px;
+    height: 785px;
+    align-content: center;
+  }
+
+  .columns-container[data-columns="5"] {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: 380px 380px;
+    gap: 25px 18px;
+    justify-content: center;
+    justify-items: center;
+    width: 636px;
+    height: 780px;
+    align-content: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .column {
+    width: 200px;
+    height: 380px;
+  }
+
+  .column-cards {
+    min-height: 322px;
+    max-height: 322px;
+  }
+
+  .column-cards .card {
+    width: 45px;
+    height: 63px;
+  }
+
+  .column-cards:has(.card:nth-child(3):last-child) .card,
+  .column-cards:has(.card:nth-child(2):last-child) .card,
+  .column-cards:has(.card:nth-child(1):last-child) .card,
+  .column-cards:has(.card:nth-child(4)) .card {
+    width: 50px;
+    height: 70px;
+  }
+
+  .column-cards:has(.card:nth-child(5):last-child) .card {
+    width: 42px;
+    height: 58px;
+  }
+
+  .players-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .player-card {
+    min-height: 150px;
+    width: 100%;
+  }
+
+  .player-cards-grid {
+    height: 100px;
+  }
+
+  .collection-stack img {
+    width: 30px;
+    height: 42px;
+  }
+
+  .wild-stack:has(img:only-child) img {
+    width: 30px;
+    height: 42px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child) {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child) .player-card {
+    min-height: 146px;
+    padding: 8px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .player-cards-grid {
+    height: 100%;
+    gap: 6px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .collection-stack
+    img {
+    width: 27px;
+    height: 38px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .wild-stack:has(img:only-child)
+    img {
+    width: 25px;
+    height: 35px;
+  }
+
+  .gamepage-actions {
+    grid-area: actions;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .action-btn {
+    min-width: 140px;
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1rem;
+    min-height: auto;
+  }
+
+  .chat-section {
+    grid-column: 1 / -1;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .chat-section .message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-height: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .chat-section .message-item {
+    width: auto;
+  }
+
+  .chat-section .messages-section {
+    margin-top: 4px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    overflow-y: auto;
+    max-width: 100%;
+    min-height: auto;
+    max-height: 75vh;
+  }
+
+  .chat-section .message-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 100%;
+    padding: 3px;
+    overflow-y: auto;
+    min-height: 0;
+    margin-bottom: auto;
+  }
+
+  .chat-section .typing-indicator {
+    height: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121613;
+  font-family: 'Baloo', cursive;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.email-form {
+  width: 420px;
+  margin: 8% auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, #363636, #181818);
+  background-position: center;
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 27px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 45px;
+}
+
+input[type="password"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #282828;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.inputsEmailUpdate .icon {
+  position: absolute;
+  margin-top: 12px;
+  right: 85px;
+  font-size: 12px;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #ebe9e9;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-updateEmail,
+.button-cancelEmail {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff99009b;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  flex: 1;
+  max-width: 120px;
+}
+
+.button-updateEmail:hover {
+  background-color: #28a745;
+}
+
+.button-cancelEmail:hover {
+  background-color: #e74c3c;
+}
+
+.input-wrapper {
+  position: relative;
+}

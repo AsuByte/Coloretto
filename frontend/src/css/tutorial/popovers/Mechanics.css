@@ -1,0 +1,445 @@
+.tutorial-popover .tutorial-mechanics-intro {
+  text-align: center;
+  padding: 10px;
+}
+
+.tutorial-popover .mechanics-title {
+  color: #ffd93d;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tutorial-popover .mechanics-subtitle {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #bfe2ff;
+  font-size: 1.05rem;
+}
+
+.tutorial-popover .tutorial-actions-content {
+  padding: 10px;
+  padding-bottom: 0;
+  text-align: left;
+}
+
+.tutorial-popover .actions-intro {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 217, 61, 0.3);
+}
+
+.tutorial-popover .actions-intro strong {
+  color: #ffd93d;
+  font-size: 1.1em;
+  display: block;
+  text-align: center;
+}
+
+.tutorial-popover .action-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.tutorial-popover .action-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.tutorial-popover .step-number {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 217, 61, 0.9);
+  color: #1a3c27;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  flex-shrink: 0;
+}
+
+.tutorial-popover .step-content {
+  flex: 1;
+}
+
+.tutorial-popover .step-title {
+  color: #ffd93d;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+
+.tutorial-popover .step-description {
+  font-size: 0.9em;
+  color: #e0e0e0;
+  line-height: 1.3;
+}
+
+.tutorial-popover .tutorial-reveal-card {
+  padding: 10px;
+  text-align: left;
+}
+
+.tutorial-popover .reveal-steps {
+  margin-bottom: 20px;
+}
+
+.tutorial-popover .reveal-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: rgba(33, 150, 243, 0.1);
+  border-radius: 8px;
+}
+
+.tutorial-popover .step-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.tutorial-popover .step-content strong {
+  color: #d5edff;
+}
+
+.tutorial-popover .reveal-purpose {
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.tutorial-popover .purpose-title {
+  color: #8aff8f;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.tutorial-popover .purpose-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tutorial-popover .purpose-item {
+  font-size: 0.9em;
+  padding-left: 20px;
+  position: relative;
+  color: #e0e0e0;
+  line-height: 1.3;
+}
+
+.tutorial-popover .purpose-item:before {
+  content: "✓";
+  color: #8aff8f;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tutorial-popover .tutorial-reveal-action {
+  padding: 10px;
+  text-align: left;
+  max-width: 500px;
+}
+
+.tutorial-popover .reveal-action-demo {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 217, 61, 0.2);
+}
+
+.tutorial-popover .demo-title {
+  color: #ffd93d;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.tutorial-popover .demo-before-after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.tutorial-popover .demo-before,
+.tutorial-popover .demo-after {
+  text-align: center;
+}
+
+.tutorial-popover .demo-label {
+  color: #bbdefb;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.tutorial-popover .demo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tutorial-popover .demo-card {
+  width: 50px;
+  height: 75px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tutorial-popover .demo-card.new-card {
+  border: 2px solid #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  animation: glowTutorial 2s infinite;
+}
+
+@keyframes glowTutorial {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  }
+}
+
+.tutorial-popover .demo-card-placeholder {
+  width: 50px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.tutorial-popover .demo-arrow {
+  font-size: 2em;
+  color: #ffd93d;
+  animation: slide 2s infinite;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.tutorial-popover .reveal-action-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.tutorial-popover .tip-icon {
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+.tutorial-popover .tip-content {
+  font-size: 0.9em;
+  color: #ffd79a;
+  line-height: 1.3;
+}
+
+.tutorial-popover .tip-content strong {
+  color: #ffe4bb;
+}
+
+.tutorial-popover .tutorial-take-column {
+  padding: 10px;
+  text-align: left;
+}
+
+.tutorial-popover .take-important {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 152, 0, 0.15);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 152, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.tutorial-popover .important-icon {
+  font-size: 1.4em;
+  flex-shrink: 0;
+}
+
+.tutorial-popover .important-text {
+  color: #fff5e6;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+.tutorial-popover .important-text strong {
+  color: #fff2ee;
+}
+
+.tutorial-popover .take-steps {
+  margin-bottom: 20px;
+}
+
+.tutorial-popover .take-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: rgba(156, 39, 176, 0.1);
+  border-radius: 8px;
+}
+
+.tutorial-popover .take-step .step-content strong {
+  color: #f8cdff;
+}
+
+.tutorial-popover .take-timing {
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.tutorial-popover .timing-title {
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.tutorial-popover .timing-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tutorial-popover .timing-item {
+  font-size: 0.9em;
+  padding-left: 20px;
+  position: relative;
+  color: #e6e6e6;
+  line-height: 1.3;
+}
+
+.tutorial-popover .timing-item:before {
+  content: "→";
+  color: #ffc107;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tutorial-popover .tutorial-strategy {
+  text-align: left;
+}
+
+.tutorial-popover .strategy-core {
+  margin-bottom: 20px;
+}
+
+.tutorial-popover .core-title {
+  color: #ffd93d;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 217, 61, 0.3);
+}
+
+.tutorial-popover .core-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tutorial-popover .principle {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tutorial-popover .principle-content {
+  flex: 1;
+}
+
+.tutorial-popover .principle-content strong {
+  color: #a2ffa6;
+  font-size: 1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tutorial-popover .principle-desc {
+  font-size: 0.9em;
+  color: #daeeff;
+  line-height: 1.3;
+}
+
+.tutorial-popover .strategy-advanced {
+  background: rgba(103, 58, 183, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(103, 58, 183, 0.3);
+}
+
+.tutorial-popover .advanced-title {
+  color: #e0ceff;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.tutorial-popover .advanced-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tutorial-popover .tip {
+  font-size: 1rem;
+  position: relative;
+  color: #e0e0e0;
+  line-height: 1.3;
+}
+
+.tutorial-popover .takeColumn {
+  font-size: 0.95rem;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-top: 15px;
+}

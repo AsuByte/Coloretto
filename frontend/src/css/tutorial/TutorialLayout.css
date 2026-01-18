@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&display=swap");
+
+.tutorial-mode .game-page {
+  position: relative;
+}
+
+.tutorial-banner {
+  background: #8b4513;
+  padding: 15px 25px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-bottom: 3px solid #ffd93d;
+  position: relative;
+  z-index: 1000;
+  width: 1200px;
+  margin: 0 auto 0 auto;
+  box-sizing: border-box;
+}
+
+.tutorial-progress {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  opacity: 1;
+}
+
+.progress-step.active .step-number {
+  background: #4caf50;
+  transform: scale(1.1);
+}
+
+.step-number {
+  width: 35px;
+  height: 35px;
+  background: #8b4513;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+.tutorial-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.tutorial-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.skip-btn {
+  background: #f44336;
+  color: white;
+}
+
+.skip-btn:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+.play-btn {
+  background: #4caf50;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.play-btn:hover {
+  background: #2e7d32;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+}
+
+.tutorial-mode .gamepage-actions .action-btn:not(:disabled) {
+  position: relative;
+}
+
+.tutorial-mode .gamepage-actions .action-btn:not(:disabled)::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  animation: buttonGlow 2s infinite;
+}
+
+@keyframes buttonGlow {
+  0%,
+  100% {
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    border-color: #66eb6b;
+    box-shadow: 0 0 20px rgba(102, 235, 107, 0.8);
+  }
+}

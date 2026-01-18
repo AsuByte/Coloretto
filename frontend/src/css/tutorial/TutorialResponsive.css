@@ -1,0 +1,183 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tutorial-banner {
+    width: 95%;
+    margin: 0 auto;
+    padding: 12px 20px;
+  }
+
+  .tutorial-popover {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .tutorial-popover .driver-popover-title {
+    font-size: 1.4rem;
+  }
+
+  .tutorial-popover .driver-popover-description {
+    font-size: 1rem;
+  }
+
+  .tutorial-popover .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tutorial-banner {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+  }
+
+  .tutorial-progress {
+    gap: 15px;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .progress-step {
+    gap: 5px;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
+
+  .tutorial-controls {
+    gap: 10px;
+  }
+
+  .tutorial-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .tutorial-popover {
+    max-width: 280px;
+    padding: 12px;
+    margin: 10px;
+  }
+
+  .tutorial-popover .driver-popover-title {
+    font-size: 1.2rem;
+  }
+
+  .tutorial-popover .driver-popover-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .tutorial-popover .welcome-list li {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .tutorial-popover .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 250px;
+  }
+
+  .tutorial-popover .card-image {
+    width: 40px;
+    height: 56px;
+  }
+
+  .tutorial-popover .card-desc {
+    font-size: 0.7rem;
+    width: 70px;
+  }
+
+  .tutorial-popover .scoring-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tutorial-popover .scoring-card {
+    width: 35px;
+    height: 52px;
+  }
+
+  .driver-popover-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .driver-popover-footer button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .tutorial-banner {
+    padding: 8px 10px;
+  }
+
+  .tutorial-progress {
+    gap: 8px;
+  }
+
+  .progress-step {
+    min-width: 60px;
+  }
+
+  .step-number {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+
+  .step-label {
+    font-size: 0.65rem;
+  }
+
+  .tutorial-popover {
+    max-width: 250px;
+    padding: 10px;
+  }
+
+  .tutorial-popover .driver-popover-title {
+    font-size: 1.1rem;
+  }
+
+  .tutorial-popover .welcome-content strong {
+    font-size: 1.1rem;
+  }
+
+  .tutorial-popover .welcome-list li {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .tutorial-popover .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tutorial-popover .card-image {
+    width: 35px;
+    height: 49px;
+  }
+
+  .tutorial-popover .card-desc {
+    font-size: 0.65rem;
+    width: 65px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tutorial-banner {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .tutorial-popover {
+    max-width: 400px;
+  }
+
+  .tutorial-popover[data-position="center"] {
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,1161 @@
+@media screen and (max-width: 767px) {
+  .game-page {
+    padding: 10px;
+  }
+
+  .game-main-area {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "header header"
+      "sidebar players"
+      "columns columns"
+      "actions actions"
+      "chat chat";
+  }
+
+  .game-header {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 10px 15px;
+    position: relative;
+    min-height: 60px;
+  }
+
+  .game-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    order: 1;
+  }
+
+  .game-title h2 {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .turn-info {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    order: 2;
+    font-size: 0.85rem;
+  }
+
+  .game-sidebar {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 10px;
+    overflow-x: auto;
+    height: auto;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .deck-section,
+  .summary-section,
+  .end-round-section,
+  .game-info-section {
+    flex: 0 0 auto;
+    width: 150px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .deck-stack {
+    height: 90px;
+    width: 110px;
+  }
+
+  .deck-card {
+    width: 110px;
+    height: 110px;
+  }
+
+  .summary-cards img {
+    width: 70px;
+    height: 98px;
+  }
+
+  .end-round-card {
+    width: 70px;
+    height: 98px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    height: 55px;
+  }
+
+  .info-item {
+    margin-bottom: 35px;
+  }
+
+  .game-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    min-height: 0;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .columns-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 12px;
+    width: fit-content;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    box-sizing: border-box;
+    transform: scale(0.95);
+    transform-origin: center;
+  }
+
+  .columns-container[data-columns="2"] {
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: 285px;
+    width: 322px;
+    height: 285px;
+  }
+
+  .columns-container[data-columns="3"] {
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 285px;
+    width: 477px;
+    height: 285px;
+  }
+
+  .columns-container[data-columns="4"] {
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 285px);
+    gap: 20px 12px;
+    width: 322px;
+    height: 590px;
+    align-content: center;
+  }
+
+  .columns-container[data-columns="5"] {
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 285px 285px;
+    gap: 20px 15px;
+    justify-content: center;
+    justify-items: center;
+    width: 477px;
+    height: 585px;
+    align-content: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .column {
+    width: 150px;
+    height: 285px;
+  }
+
+  .column-cards {
+    min-height: 242px;
+    max-height: 242px;
+  }
+
+  .column-cards .card {
+    width: 34px;
+    height: 48px;
+  }
+
+  .column-cards:has(.card:nth-child(3):last-child) .card,
+  .column-cards:has(.card:nth-child(2):last-child) .card,
+  .column-cards:has(.card:nth-child(1):last-child) .card,
+  .column-cards:has(.card:nth-child(4)) .card {
+    width: 38px;
+    height: 53px;
+  }
+
+  .column-cards:has(.card:nth-child(5):last-child) .card {
+    width: 28px;
+    height: 40px;
+  }
+
+  .players-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+  }
+
+  .player-card {
+    height: auto;
+    padding: 8px;
+    width: auto;
+  }
+
+  .player-cards-grid {
+    height: 80px;
+  }
+
+  .collection-stack img {
+    width: 25px;
+    height: 35px;
+  }
+
+  .wild-stack:has(img:only-child) img {
+    width: 25px;
+    height: 35px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child) {
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child) .player-card {
+    min-height: 115px;
+    padding: 6px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .player-cards-grid {
+    height: 90%;
+    gap: 5px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .collection-stack
+    img {
+    width: 22px;
+    height: 31px;
+  }
+
+  .players-sidebar:has(.player-card:nth-child(5):last-child)
+    .wild-stack:has(img:only-child)
+    img {
+    width: 20px;
+    height: 28px;
+  }
+
+  .gamepage-actions {
+    grid-area: actions;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .action-btn {
+    min-width: 120px;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-height: auto;
+  }
+
+  .chat-section {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .chat-section .connected-users-panel {
+    width: 100%;
+    overflow-x: auto;
+    min-height: 50px;
+    min-width: auto;
+    max-width: auto;
+    display: block;
+    overflow: auto;
+    padding: 3px 6px;
+    margin: 0 auto;
+    order: -1;
+  }
+
+  .chat-section .message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-height: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .chat-section .message-item {
+    width: auto;
+  }
+
+  .chat-section .messages-section {
+    margin-top: 4px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    overflow-y: auto;
+    max-width: 100%;
+    min-height: auto;
+    max-height: 75vh;
+  }
+
+  .chat-section .message-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 100%;
+    padding: 3px;
+    overflow-y: auto;
+    min-height: 0;
+    margin-bottom: auto;
+  }
+
+  .chat-section .message-time {
+    margin-top: 5px;
+  }
+
+  .chat-section .typing-indicator {
+    height: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    flex-shrink: 0;
+  }
+
+  .scores-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 15px;
+    max-height: 85vh;
+  }
+
+  .scores-header {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .scores-header h2 {
+    position: static;
+    transform: none;
+    font-size: 1.8rem;
+    text-align: center;
+    order: 1;
+  }
+
+  .scores-summary-card-image {
+    order: 2;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .scores-close-btn {
+    order: 3;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+  }
+
+  .scores-table {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .scores-table-header {
+    display: none;
+  }
+
+  .scores-table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .scores-table-row {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .scores-table-col {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .scores-table-col:last-child {
+    border-bottom: none;
+  }
+
+  .players-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cards-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .points-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .scores-player-cards-section {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .scores-collection-cards {
+    gap: 8px;
+  }
+
+  .scores-color-card {
+    width: 40px;
+    height: 56px;
+  }
+
+  .scores-wild-card {
+    width: 40px;
+    height: 56px;
+  }
+
+  .scores-player-name {
+    font-size: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scores-winner-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .scores-points-breakdown {
+    gap: 6px;
+  }
+
+  .scores-points-item {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .scores-points-total {
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  .scores-total-label {
+    font-size: 0.9rem;
+  }
+
+  .scores-total-value {
+    font-size: 1rem;
+  }
+
+  .scores-table-wrapper {
+    max-height: calc(85vh - 120px);
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+  .game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .game-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    order: 1;
+  }
+
+  .game-title h2 {
+    font-size: 1.3rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .turn-info {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    order: 2;
+    font-size: 0.9rem;
+  }
+
+  .game-sidebar {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 12px 8px;
+    overflow-x: auto;
+    gap: 25px;
+  }
+
+  .deck-section,
+  .summary-section,
+  .end-round-section,
+  .game-info-section {
+    flex: 0 0 auto;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    height: 15vh;
+    min-height: 15vh;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  .deck-stack {
+    height: 70px;
+    width: 85px;
+  }
+
+  .deck-card {
+    width: 85px;
+    height: 85px;
+  }
+
+  .summary-cards img,
+  .end-round-card {
+    width: 55px;
+    height: 80px;
+    margin-top: 5px;
+  }
+
+  .info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .info-item {
+    margin-top: 10px;
+  }
+
+  .info-label,
+  .info-value {
+    font-size: 0.6rem;
+  }
+
+  .deck-section h4,
+  .summary-section h4,
+  .game-info-section h4 {
+    font-size: 0.75rem;
+    margin-bottom: 1px;
+    padding: 0;
+  }
+
+  .end-round-section h4 {
+    font-size: 0.75rem;
+    margin-top: 25px;
+  }
+
+  .end-round-placeholder::after {
+    font-size: 0.75rem;
+    margin-bottom: 30px;
+  }
+
+  .deck-count,
+  .summary-cards .empty-summary,
+  .end-round-placeholder::before {
+    font-size: 0.7rem;
+  }
+
+  .game-center {
+    padding: 0 5px;
+    min-width: 0;
+    max-width: 93vw;
+  }
+
+  .columns-container {
+    transform: scale(0.9);
+    gap: 10px;
+  }
+
+  .columns-container[data-columns="2"] {
+    grid-template-columns: repeat(2, 135px);
+    grid-template-rows: 255px;
+    width: 290px;
+    height: 255px;
+  }
+
+  .columns-container[data-columns="3"] {
+    grid-template-columns: repeat(3, 135px);
+    grid-template-rows: 255px;
+    width: 425px;
+    height: 255px;
+  }
+
+  .columns-container[data-columns="4"] {
+    grid-template-columns: repeat(2, 135px);
+    grid-template-rows: repeat(2, 255px);
+    width: 290px;
+    height: 530px;
+  }
+
+  .columns-container[data-columns="5"] {
+    grid-template-columns: repeat(3, 135px);
+    grid-template-rows: 255px 255px;
+    width: 425px;
+    height: 530px;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .column {
+    width: 135px;
+    height: 255px;
+  }
+
+  .column-cards {
+    min-height: 195px;
+    max-height: 195px;
+  }
+
+  .column-cards .card {
+    width: 30px;
+    height: 42px;
+  }
+
+  .column-cards:has(.card:nth-child(3):last-child) .card,
+  .column-cards:has(.card:nth-child(2):last-child) .card,
+  .column-cards:has(.card:nth-child(1):last-child) .card,
+  .column-cards:has(.card:nth-child(4)) .card {
+    width: 34px;
+    height: 47px;
+  }
+
+  .column-cards:has(.card:nth-child(5):last-child) .card {
+    width: 28px;
+    height: 39px;
+  }
+
+  .players-sidebar:has(> :nth-child(2):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(3):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(4):last-child) .player-card {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 479px) {
+  .game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .game-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    order: 1;
+  }
+
+  .game-title h2 {
+    font-size: 1.3rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .turn-info {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    order: 2;
+    font-size: 0.9rem;
+  }
+
+  .game-sidebar {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 8px;
+    width: 38vw;
+    height: auto;
+    overflow-x: auto;
+    gap: 30px;
+  }
+
+  .deck-section,
+  .summary-section,
+  .end-round-section,
+  .game-info-section {
+    flex: 0 0 auto;
+    width: 120px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  .deck-stack {
+    height: 70px;
+    width: 85px;
+  }
+
+  .deck-card {
+    width: 85px;
+    height: 85px;
+  }
+
+  .summary-cards img,
+  .end-round-card {
+    width: 55px;
+    height: 80px;
+    margin-top: 5px;
+  }
+
+  .info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .info-item {
+    margin-top: 10px;
+  }
+
+  .info-label,
+  .info-value {
+    font-size: 0.6rem;
+  }
+
+  .deck-section h4,
+  .summary-section h4,
+  .game-info-section h4 {
+    font-size: 0.75rem;
+    margin-bottom: 1px;
+    padding: 0;
+  }
+
+  .end-round-section h4 {
+    font-size: 0.75rem;
+  }
+
+  .end-round-placeholder::after {
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+  }
+
+  .deck-count,
+  .summary-cards .empty-summary,
+  .end-round-placeholder::before {
+    font-size: 0.7rem;
+  }
+
+  .game-center {
+    padding: 0 5px;
+    min-width: 0;
+    max-width: 87vw;
+    height: 55vh;
+  }
+
+  .columns-container {
+    transform: scale(0.75);
+    gap: 10px;
+  }
+
+  .columns-container[data-columns="2"] {
+    grid-template-columns: repeat(2, 135px);
+    grid-template-rows: 255px;
+    width: 290px;
+    height: 255px;
+  }
+
+  .columns-container[data-columns="3"] {
+    grid-template-columns: repeat(3, 135px);
+    grid-template-rows: 255px;
+    width: 425px;
+    height: 255px;
+  }
+
+  .columns-container[data-columns="4"] {
+    grid-template-columns: repeat(2, 135px);
+    grid-template-rows: repeat(2, 255px);
+    width: 290px;
+    height: 530px;
+  }
+
+  .columns-container[data-columns="5"] {
+    grid-template-columns: repeat(3, 135px);
+    grid-template-rows: 255px 255px;
+    width: 425px;
+    height: 530px;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .columns-container[data-columns="5"] .column:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .column {
+    width: 135px;
+    height: 255px;
+  }
+
+  .column-cards {
+    min-height: 195px;
+    max-height: 195px;
+  }
+
+  .column-cards .card {
+    width: 30px;
+    height: 42px;
+  }
+
+  .column-cards:has(.card:nth-child(3):last-child) .card,
+  .column-cards:has(.card:nth-child(2):last-child) .card,
+  .column-cards:has(.card:nth-child(1):last-child) .card,
+  .column-cards:has(.card:nth-child(4)) .card {
+    width: 34px;
+    height: 47px;
+  }
+
+  .column-cards:has(.card:nth-child(5):last-child) .card {
+    width: 28px;
+    height: 39px;
+  }
+
+  .players-sidebar {
+    width: 45vw;
+    padding: 8px 6px;
+    gap: 5px;
+  }
+
+  .players-sidebar:has(> :nth-child(2):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(3):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(4):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(5):last-child) .player-card {
+    width: 150px;
+  }
+
+  .player-cards-grid {
+    grid-template-columns: 1fr 1fr;
+    overflow-y: auto;
+  }
+
+  .collection-stack img {
+    width: 20px;
+    height: 30px;
+  }
+
+  .card-count {
+    font-size: 0.65rem;
+  }
+
+  .chat-section {
+    width: 87vw;
+  }
+
+  .gamepage-actions {
+    gap: 8px;
+    flex-direction: column;
+    width: 87vw;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .game-header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .game-title {
+    position: static;
+    transform: none;
+    left: auto;
+    width: 100%;
+  }
+
+  .turn-info {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .game-sidebar {
+    width: 42vw;
+    padding: 10px 6px;
+    gap: 20px;
+  }
+
+  .deck-section,
+  .summary-section,
+  .end-round-section,
+  .game-info-section {
+    width: 100px;
+    padding: 5px;
+  }
+
+  .deck-stack {
+    height: 60px;
+    width: 75px;
+  }
+
+  .deck-card {
+    width: 75px;
+    height: 75px;
+  }
+
+  .summary-cards img,
+  .end-round-card {
+    width: 45px;
+    height: 63px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    height: 55px;
+  }
+
+  .info-label {
+    font-size: 0.6rem;
+  }
+
+  .game-center {
+    padding: 0 5px;
+    min-width: 0;
+    max-width: 87vw;
+    height: 55vh;
+  }
+
+  .columns-container {
+    transform: scale(0.75);
+    gap: 8px;
+  }
+
+  .players-sidebar {
+    width: 39vw;
+    padding: 6px 4px;
+    gap: 4px;
+  }
+
+  .players-sidebar:has(> :nth-child(2):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(3):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(4):last-child) .player-card,
+  .players-sidebar:has(> :nth-child(5):last-child) .player-card {
+    width: 130px;
+    min-height: 100px;
+    padding: 4px;
+  }
+
+  .player-cards-grid {
+    height: 60px;
+    overflow: auto;
+    gap: 4px;
+  }
+
+  .collection-stack img {
+    width: 18px;
+    height: 25px;
+  }
+
+  .wild-stack img {
+    width: 16px;
+    height: 22px;
+  }
+
+  .player-name {
+    font-size: 0.6rem;
+  }
+
+  .card-count {
+    font-size: 0.5rem;
+    padding: 1px 4px;
+  }
+
+  .chat-section {
+    width: 87vw;
+  }
+
+  .gamepage-actions {
+    width: 87vw;
+    gap: 6px;
+  }
+
+  .action-btn {
+    min-width: 110px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .scores-container {
+    padding: 10px;
+    max-height: 75vh;
+    width: 98%;
+  }
+
+  .scores-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .scores-summary-img {
+    width: 45px;
+    height: 63px;
+  }
+
+  .scores-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+
+  .scores-table-body {
+    width: min-content;
+  }
+
+  .scores-color-card {
+    width: 30px;
+    height: 42px;
+  }
+
+  .scores-wild-card {
+    width: 30px;
+    height: 42px;
+  }
+
+  .scores-collection-cards {
+    gap: 5px;
+  }
+
+  .scores-color-group {
+    gap: 2px;
+  }
+
+  .scores-color-count {
+    font-size: 0.7rem;
+    padding: 1px 5px;
+  }
+
+  .scores-player-name {
+    font-size: 0.85rem;
+  }
+
+  .scores-winner-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .scores-points-item {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  .scores-total-label {
+    font-size: 0.8rem;
+  }
+
+  .scores-total-value {
+    font-size: 0.9rem;
+  }
+
+  .scores-table-wrapper {
+    max-height: calc(75vh - 100px);
+  }
+
+  .card-zoomed-img {
+    width: 200px;
+    height: 267px;
+  }
+
+  .card-zoom-close {
+    top: -25px;
+    right: -25px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+  }
+
+  .card-zoom-title {
+    font-size: 1.2rem;
+  }
+}

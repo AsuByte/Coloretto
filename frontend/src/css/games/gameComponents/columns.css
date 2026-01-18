@@ -1,0 +1,93 @@
+.game-center {
+  grid-area: columns;
+  display: flex;
+  background: var(--color-card);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  height: 350px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.columns-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--spacing-lg);
+  width: max-content;
+  min-width: 100%;
+  padding: 5px 10px;
+  height: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.column {
+  background: #f5f1e6;
+  border: 2px solid var(--color-secondary);
+  border-radius: 10px;
+  padding: var(--spacing-md) 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  width: 250px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.column:hover {
+  background: var(--color-card);
+  border-color: #4e362e;
+}
+
+.column.selected {
+  background: #ffe5be;
+}
+
+.column.empty {
+  opacity: 0.35;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-name {
+  font-weight: bold;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  min-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-height: 250px;
+  max-height: 250px;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 2px;
+  overflow-y: auto;
+}
+
+.column-cards .card {
+  width: 60px;
+  height: 84px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}

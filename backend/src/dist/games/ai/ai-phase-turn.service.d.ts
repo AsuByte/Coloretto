@@ -1,0 +1,31 @@
+import { Model } from 'mongoose';
+import { AITurnResult } from '@/types/interfaces';
+import { Game, GameDocument } from '@/games/game.schema';
+import { AiStrategyService } from '@/games/ai/ai-strategy.service';
+import { AiPhaseRoundEndService } from '@/games/ai/ai-phase-round-end.service';
+import { AiPhaseGameEndService } from '@/games/ai/ai-phase-game-end.service';
+import { GameGateway } from '@/games/game.gateway';
+export declare class AiPhaseTurnService {
+    private gameModel;
+    private aiStrategy;
+    private aiRoundEndService;
+    private aiGameEndService;
+    private gameGateway;
+    private readonly MAX_REVEAL_ACTIONS;
+    private readonly ACTION_DELAY;
+    private static recentRoundEndTimestamps;
+    constructor(gameModel: Model<GameDocument>, aiStrategy: AiStrategyService, aiRoundEndService: AiPhaseRoundEndService, aiGameEndService: AiPhaseGameEndService, gameGateway: GameGateway);
+    private shouldEndRound;
+    static recordRoundEndCard(gameId: string): void;
+    executeAITurn(gameState: GameDocument, playerId: string): Promise<AITurnResult[]>;
+    private isValidTurn;
+    private canRevealCard;
+    private executeRevealCard;
+    private handleGoldenWild;
+    private executeTakeColumn;
+    advanceTurn(gameState: Game): void;
+    private forceTakeColumn;
+    private updatePlayerCollection;
+    private shouldEndGame;
+    private delay;
+}
