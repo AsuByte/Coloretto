@@ -8,6 +8,8 @@
 ![Socket.io](https://img.shields.io/badge/Socket.io-RealTime-black?logo=socket.io)
 ![Zustand](https://img.shields.io/badge/State-Zustand-orange)
 
+![Image](https://github.com/user-attachments/assets/62d01768-6935-47ce-99bf-c51620b421ca)
+
 ---
 
 ## Demo en Vivo y Acceso Rápido
