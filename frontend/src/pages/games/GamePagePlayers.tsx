@@ -202,7 +202,7 @@ const GamePagePlayers: React.FC = () => {
     if (!column) return false;
 
     const hasGoldenWild = column.cards.some((c) => c.color === "golden_wild");
-    const limit = hasGoldenWild ? 4 : 3;
+    const limit = hasGoldenWild ? 5 : 4;
 
     return column.cards.length >= limit;
   })();

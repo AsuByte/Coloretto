@@ -18,7 +18,7 @@ Prueba la aplicación directamente en producción sin instalar nada:
 
 ### Credenciales de Prueba
 
-Para facilitar el acceso, hemos habilitado una cuenta de test:
+Para facilitar el acceso, se habilita una cuenta de test:
 
 | Campo          | Valor      |
 | :------------- | :--------- |
