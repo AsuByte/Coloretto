@@ -232,7 +232,7 @@ const Chat: React.FC = () => {
 
       try {
         const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
-        const response = await fetch(`${BACKEND_URL}/users/profile/${username}`);
+        const response = await fetch(`${BACKEND_URL}users/profile/${username}`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
