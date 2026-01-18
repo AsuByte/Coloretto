@@ -232,11 +232,8 @@ const Chat: React.FC = () => {
       const defaultAvatar = `https://ui-avatars.com/api/?name=${username}&background=random&color=fff&size=40`;
 
       try {
-        const BACKEND_URL = (
-          import.meta.env.VITE_BACKEND_URL || "http://localhost:3000"
-        ).replace(/\/$/, "");
         const response = await fetch(
-          `${BACKEND_URL}/users/profile/${username}`,
+          `https://coloretto.onrender.com/users/profile/${username}`,
         );
 
         if (!response.ok) {
