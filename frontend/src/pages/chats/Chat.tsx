@@ -102,7 +102,8 @@ const Chat: React.FC = () => {
     if (!user?.username) return;
 
     if (!socketRef.current) {
-      socketRef.current = io("http://192.168.1.18:3000", {
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      socketRef.current = io(`${BACKEND_URL}`, {
         query: { userName: user.username, gameName },
         withCredentials: true,
       });

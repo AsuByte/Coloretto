@@ -1,10 +1,10 @@
 import axios from "axios";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
 const instance = axios.create({
-  baseURL: "http://192.168.1.18:3000",
+  baseURL: `${BACKEND_URL}`,
   withCredentials: true,
 });
 
 export default instance;
-
-// https://coloretto-api.onrender.com PARA DESPLIEGUE EN BASEURL

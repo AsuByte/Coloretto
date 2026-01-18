@@ -117,7 +117,8 @@ export const useGameStore = create<GameState>((set, get) => ({
   initSocket: () => {
     const { socket } = get();
     if (!socket) {
-      const newSocket = io("http://192.168.1.18:3000", {
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      const newSocket = io(`${BACKEND_URL}`, {
         withCredentials: true,
       });
 
