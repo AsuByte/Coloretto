@@ -102,7 +102,8 @@ const Chat: React.FC = () => {
     if (!user?.username) return;
 
     if (!socketRef.current) {
-      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      const BACKEND_URL =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
       socketRef.current = io(`${BACKEND_URL}`, {
         query: { userName: user.username, gameName },
         withCredentials: true,
@@ -231,7 +232,9 @@ const Chat: React.FC = () => {
       const defaultAvatar = `https://ui-avatars.com/api/?name=${username}&background=random&color=fff&size=40`;
 
       try {
-        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+        const BACKEND_URL = (
+          import.meta.env.VITE_BACKEND_URL || "http://localhost:3000"
+        ).replace(/\/$/, "");
         const response = await fetch(`${BACKEND_URL}users/profile/${username}`);
 
         if (!response.ok) {
