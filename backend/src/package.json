@@ -30,7 +30,7 @@
     "@nestjs/websockets": "^11.1.12",
     "bcryptjs": "^3.0.3",
     "class-validator": "^0.14.3",
-    "cloudinary": "2.6.0",
+    "cloudinary": "2.7.0",
     "commander": "^11.1.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
