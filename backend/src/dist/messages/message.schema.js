@@ -34,6 +34,14 @@ __decorate([
 __decorate([
     (0, mongoose_1.Prop)({ type: Date, default: Date.now }),
     __metadata("design:type", Date)
+], Message.prototype, "createdAt", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: Date, default: Date.now }),
+    __metadata("design:type", Date)
+], Message.prototype, "updatedAt", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: Date, default: Date.now }),
+    __metadata("design:type", Date)
 ], Message.prototype, "sentAt", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ type: Map, of: [String], default: {} }),

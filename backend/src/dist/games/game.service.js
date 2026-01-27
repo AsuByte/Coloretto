@@ -215,7 +215,7 @@ let GameService = class GameService {
             throw new common_1.NotFoundException(`Player '${username}' not found in game`);
         }
         const humanPlayers = game.players.filter((p) => p !== username);
-        if (humanPlayers.length > 0 && !game.isRoundCardRevealed) {
+        if (game.isAiEnabled && humanPlayers.length > 0 && !game.isRoundCardRevealed) {
             const wasOwner = game.owner === username;
             const oldOwner = username;
             const result = await this.aiReplacementService.replacePlayerWithAI(gameName, username);

@@ -19,6 +19,12 @@ export class Message {
   text: string;
 
   @Prop({ type: Date, default: Date.now })
+  createdAt: Date;
+
+  @Prop({ type: Date, default: Date.now })
+  updatedAt: Date;
+
+  @Prop({ type: Date, default: Date.now })
   sentAt: Date;
 
   @Prop({ type: Map, of: [String], default: {} })

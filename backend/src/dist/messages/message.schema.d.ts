@@ -5,6 +5,8 @@ export declare class Message {
     messageId: string;
     sender: string;
     text: string;
+    createdAt: Date;
+    updatedAt: Date;
     sentAt: Date;
     reactions: Map<string, string[]>;
     references: string[];

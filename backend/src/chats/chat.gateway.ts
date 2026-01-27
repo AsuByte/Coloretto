@@ -70,13 +70,15 @@ export class ChatGateway
       message.gameName,
     );
 
+    const messageData = JSON.parse(JSON.stringify(newMessage));
+
     if (message.gameName) {
-      this.server.to(message.gameName).emit('message', newMessage);
+      this.server.to(message.gameName).emit('message', messageData);
     } else {
-      this.server.emit('general', newMessage);
+      this.server.emit('general', messageData);
     }
 
-    return newMessage;
+    return messageData;
   }
 
   @SubscribeMessage('reaction')

@@ -120,6 +120,8 @@ export interface Column {
 
 export interface Message {
   messageId: string;
+  createdAt: Date;
+  updatedAt: Date;
   text: string;
   sender: string;
   gameName?: string;

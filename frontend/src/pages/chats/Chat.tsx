@@ -74,26 +74,23 @@ const Chat: React.FC = () => {
 
     if (relevantMessages?.length > 0) {
       const formattedMessages = relevantMessages.map((msg: Message) => {
-        let timestamp: number;
-
-        if (msg.timestamp && !isNaN(Number(msg.timestamp))) {
-          timestamp = Number(msg.timestamp);
-        } else {
-          timestamp = Date.now();
-        }
+        const rawDate = msg.timestamp || msg.createdAt || msg.updatedAt;
+        const parsedTimestamp = new Date(rawDate).getTime();
 
         return {
-          messageId: msg.messageId || "",
+          messageId: msg.messageId || Math.random().toString(36),
           sender: msg.sender,
           text: msg.text || "",
-          timestamp: timestamp,
+          timestamp: !isNaN(parsedTimestamp) ? parsedTimestamp : Date.now(),
           formattedText: formatMessageText(msg.text || ""),
-          reactions: msg.reactions,
+          reactions: msg.reactions || {},
         };
       });
 
+      formattedMessages.sort((a, b) => a.timestamp - b.timestamp);
+
       setTimeout(() => {
-        setMessages(formattedMessages);
+        setMessages(formattedMessages as Message[]);
       }, 0);
     }
   }, [contextMessages, formatMessageText, gameName]);
@@ -113,9 +110,12 @@ const Chat: React.FC = () => {
     const socket = socketRef.current;
 
     const handleNewMessage = (message: Message) => {
+      const rawDate = message.timestamp || message.createdAt;
+      const parsedTimestamp = new Date(rawDate).getTime();
+
       const messageWithTimestamp = {
         ...message,
-        timestamp: message.timestamp || Date.now(),
+        timestamp: !isNaN(parsedTimestamp) ? parsedTimestamp : Date.now(),
         formattedText: formatMessageText(message.text),
       };
 
@@ -296,11 +296,9 @@ const Chat: React.FC = () => {
   const sendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (input.trim()) {
-      const timestamp = Date.now();
       socketRef.current?.emit("message", {
         sender: user?.username,
         text: input,
-        timestamp,
         gameName,
       });
 

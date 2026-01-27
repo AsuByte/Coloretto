@@ -1,6 +1,5 @@
 import { OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import { Message } from '@/messages/message.schema';
 import { MessagesService } from '@/messages/message.service';
 export declare class ChatGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
     private messagesService;
@@ -15,7 +14,7 @@ export declare class ChatGateway implements OnGatewayInit, OnGatewayConnection, 
         sender: string;
         text: string;
         gameName?: string;
-    }): Promise<Message>;
+    }): Promise<any>;
     handleReaction(reaction: {
         messageId: string;
         emoji: string;

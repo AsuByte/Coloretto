@@ -6,6 +6,7 @@ export declare class Game {
     gameName: string;
     maxPlayers: number;
     isAvailable: boolean;
+    isAiEnabled: boolean;
     players: string[];
     aiPlayers: {
         name: string;

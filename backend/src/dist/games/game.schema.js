@@ -32,6 +32,10 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Game.prototype, "isAvailable", void 0);
 __decorate([
+    (0, mongoose_1.Prop)({ default: false }),
+    __metadata("design:type", Boolean)
+], Game.prototype, "isAiEnabled", void 0);
+__decorate([
     (0, mongoose_1.Prop)({ type: [String], default: [] }),
     __metadata("design:type", Array)
 ], Game.prototype, "players", void 0);
